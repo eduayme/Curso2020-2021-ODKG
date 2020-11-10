@@ -19,13 +19,12 @@ mappings:
       - [contratos_gobierno_aragon_2017-updated.csv~csv]
     s: http://group01.org/aragon/resource/Contract/$(Code)
     po:
-      - [a, pproc:Contract]
-      - [rdfs:label, $(Code)]
+      - [a, pproc:$(TypeOfContract)]
+      - [rdf:ID, $(Code)]
       - [vocab:hasAwardPrice,$(AwardPrice),xsd:double]
       - [vocab:hasAwardProcedure,$(AwardProcedure),xsd:string]
       - [vocab:hasBiddingPrice,$(BiddingPrice),xsd:double]
       - [dct:description,$(Description),xsd:string]
-      - [vocab:hasTypeOfContract,$(TypeOfContract),xsd:string]
       - p: vocab:awardedTo
         o:
           - mapping: triplesmap2

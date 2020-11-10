@@ -965,5 +965,18 @@
     "oldColumnName": "Identidad del adjudicatario",
     "newColumnName": "Company",
     "description": "Rename column Identidad del adjudicatario to Company"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TypeOfContract",
+    "expression": "grel:if (value.contains(\"Obras\"),\"WorksContract\",\nif (value.contains(\"Servicios\"),\"ServicesContract\",\nif (value.contains(\"Suministros\"),\"SuppliesContract\",\nif (value.contains(\"Privados\"),\"PrivateContract\",null))))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TypeOfContract using expression grel:if (value.contains(\"Obras\"),\"WorksContract\",\nif (value.contains(\"Servicios\"),\"ServicesContract\",\nif (value.contains(\"Suministros\"),\"SuppliesContract\",\nif (value.contains(\"Privados\"),\"PrivateContract\",null))))"
   }
 ]
