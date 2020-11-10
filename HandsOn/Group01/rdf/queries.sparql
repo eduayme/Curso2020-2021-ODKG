@@ -1,9 +1,9 @@
-# 1. Get all properties of Contract, except rdf:type
+# 1. Get all properties of contracts, except rdf:type
 
 PREFIX vocab: <http://group01.org/aragon/ontology/>
 SELECT DISTINCT ?prop
 WHERE {
-    ?contract a vocab:Contract .
+    ?contract a/rdfs:subClassOf* vocab:Contract .
     ?contract ?prop ?x .
     FILTER (?prop != rdf:type) }
 
